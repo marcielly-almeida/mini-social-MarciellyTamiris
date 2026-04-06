@@ -1,17 +1,22 @@
-let likeCount = 0;
-let curtido - false; // flag boleana 
+const likeBtn = document.querySelector("#likeBtn");
+const countSpan = document.querySelector("#likeCount");
 
-function curtir() {
-  if(curtido -- false){
-    likeCount++;
-    curtido = true;
-  document.getElementById("likeCount").innerText = likeCount;
-  } else{
-    likecount --;
-    curtido - false;
-    document.getElementById("likeCount").innerText = likeCount;
+let count = 0;
+let liked = false;
+
+likeBtn.addEventListener("click", function () {
+
+  if (!liked) {
+    liked = true;
+    likeBtn.style.background = "#00a8ff";
+    likeBtn.style.color = "#fff";
+    count++;
+  } else {
+    liked = false;
+    likeBtn.style.background = "#353b48";
+    likeBtn.style.color = "#f5f6fa";
+    count--;
   }
 
-}
-
-document.getElementById("likeBtn").addEventListener("click", curtir);
+  countSpan.textContent = count;
+});
