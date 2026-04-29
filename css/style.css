@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #000;
+  background-color: #f5eded;
   color: #ffffff;
 }
 
@@ -13,7 +13,7 @@ header {
 
 .logo {
   font-family: 'Pacifico', cursive;
-  color: #a237d4;
+  color: #bb70ce;
   font-size: 40px;
 }
 
@@ -23,10 +23,10 @@ header {
 }
 
 .post {
-  background-color: #0f1f16;
+  background-color: #da79fa;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px #0f1f16;
+  box-shadow: 0 0 10px #faa8fa;
 }
 
 .post-header {
@@ -49,11 +49,11 @@ header {
 
 .name {
   font-weight: bold;
-  color: #7b37d4;
+  color: #000000;
 }
 
 .username {
-  color: #888888;
+  color: #130a0a;
   margin-left: 5px;
 }
 
@@ -79,7 +79,7 @@ button:hover {
 }
 
 .comments {
-  border-top: 1px solid #3d1f39;
+  border-top: 1px solid #f8eaf6;
   padding-top: 15px;
 }
 

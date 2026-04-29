@@ -1,22 +1,63 @@
-const likeBtn = document.querySelector("#likeBtn");
-const countSpan = document.querySelector("#likeCount");
+ //=== ESTADO (dados da aplicação) === 
 
-let count = 0;
-let liked = false;
+let likeCount = 0;
+let dislikeCount = 0;
+let curtido = false;
+let descurtido = false;
 
-likeBtn.addEventListener("click", function () {
+// === SERVICE (regras de negócio) ===
 
-  if (!liked) {
-    liked = true;
-    likeBtn.style.background = "#00a8ff";
-    likeBtn.style.color = "#fff";
-    count++;
-  } else {
-    liked = false;
-    likeBtn.style.background = "#353b48";
-    likeBtn.style.color = "#f5f6fa";
-    count--;
+function curtir() {
+  if (curtido == false){
+    likeCount++;
+    curtido = true;
+    document.getElementById("likeCount").innerText = likeCount;
+
+    if(descurtido == true){
+      dislikeCount--;
+      descurtido = false;
+      document.getElementById("dislikeCount").innerText = dislikeCount;
+
+    }
+
+  }else{
+    likeCount--;
+    curtido = false;
+    document.getElementById("likeCount").innerText = likeCount;
   }
 
-  countSpan.textContent = count;
-});
+}
+
+function descurtir() {
+  if(descurtido == false){
+    dislikeCount++;
+    descurtido = true;
+    document.getElementById("dislikeCount").innerText = dislikeCount;
+
+    if(curtido == true){
+      likeCount--;
+      curtido = false;
+      document.getElementById("likeCount").innerText = likeCount;
+    }
+
+  }
+  else{
+    dislikeCount--;
+    descurtido = false;
+    document.getElementById("dislikeCount").innerText = dislikeCount;
+  }
+}
+
+// === CONTROLLER (intermediação)===
+
+function clicarCurtir(){
+   curtir();
+}
+function clicarDescurtir(){
+   descurtir();
+}
+
+// === EVENTOS ===
+
+document.getElementById("likeBtn").addEventListener("click", clicarCurtir);
+document.getElementById("dislikeBtn").addEventListener("click", descurtir);
